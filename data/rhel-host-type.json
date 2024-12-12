@@ -1,0 +1,34 @@
+{
+  "name": "rhel_host",
+  "schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "rhel_host": {
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "workspace_id": { "type": "string", "format": "uuid" }
+            },
+            "required": ["workspace_id"],
+            "additionalProperties": false
+          },
+          "reporter_data": {
+            "type": "object",
+            "properties": {
+              "reporter_type": { "type": "string" }
+            },
+            "required": ["reporter_type"],
+            "additionalProperties": false
+          }
+        },
+        "required": ["metadata", "reporter_data"],
+        "additionalProperties": false
+      }
+    },
+    "required": ["rhel_host"],
+    "additionalProperties": false
+  }
+}

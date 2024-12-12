@@ -27,6 +27,15 @@ curl --location 'http://localhost:8080/resource-types' \
 
 '
 ```
+
+or alternatively use a JSON payload
+
+```sh
+curl --location 'http://localhost:8080/resource-types' \
+--header 'Content-Type: application/json' \
+--data @data/k8s-cluster-type.json
+```
+
 # Create Resource
 
 ```sh
@@ -37,3 +46,14 @@ curl --location 'http://localhost:8080/resource-data/k8s_cluster' \
   "cluster_status": "READY"
 }'
 ```
+
+or alternatively use a JSON payload
+
+```sh
+curl --location 'http://localhost:8080/resource-data/k8s_cluster' \
+--header 'Content-Type: application/json' \
+--data @data/k8s-cluster-data.json
+```
+
+# Stop postgres database
+`./stop-postgresql.sh`
